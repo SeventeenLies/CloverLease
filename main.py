@@ -24,3 +24,6 @@ streamlit.text(my_data_row)
 
 my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 streamlit.text(my_cur.fetchone())
+user_fruit=streamlit.text_input('fruit insert')
+my_cur.execute('Insert into pc_rivery_db.public.fruit_load_list (FRUIT_NAME) values (%s)'%user_fruit)
+streamlit.info(my_cur.fetchone())
