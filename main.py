@@ -27,5 +27,5 @@ streamlit.text(my_cur.fetchone())
 user_fruit=streamlit.text_input('fruit insert')
 button=streamlit.button('insert')
 if button:
-  my_cur.execute('Insert into pc_rivery_db.public.fruit_load_list (FRUIT_NAME) values (%s)'%user_fruit)
+  my_cur.execute('Insert into pc_rivery_db.public.fruit_load_list (FRUIT_NAME) values (\'%s\')'%user_fruit)
   streamlit.info(my_cur.fetchone())
